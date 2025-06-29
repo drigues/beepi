@@ -20,18 +20,11 @@ gem "jbuilder"
 gem "pg", "~> 1.1"
 
 # Hotwire
-gem "turbo-rails"
-gem "stimulus-rails"
 gem "tailwindcss-rails", "~> 3.3.1"
 
 # Authentication
 gem "devise"
 gem "omniauth"
-
-# Background Jobs
-gem "solid_queue"
-# ⚠️ Removed solid_cache since you are using Redis for cache
-# ⚠️ Removed solid_cable unless you are using ActionCable with DB-backed adapter
 
 # Redis
 gem "redis", "~> 4.0"
