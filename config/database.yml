@@ -21,3 +21,7 @@ production:
   queue:
     adapter: postgresql
     url: postgresql://be_epicc_user:RZjihVWhT9FpRkY5uW4nLMp5K0puEf6L@dpg-d19iug0dl3ps73cns8d0-a/be_epicc
+
+  cache:
+    adapter: postgresql
+    url: postgresql://be_epicc_user:RZjihVWhT9FpRkY5uW4nLMp5K0puEf6L@dpg-d19iug0dl3ps73cns8d0-a/be_epicc
