@@ -1,0 +1,9 @@
+<div class="center-container">
+  <div class="claim-form">
+    <%= form_with url: signup_path, method: :get, local: true do |f| %>
+      <%= label_tag :directory, "Enter your directory" %><br>
+      <%= text_field_tag :directory, params[:directory], placeholder: "e.g. your-directory", required: true %><br>
+      <%= submit_tag "Claim" %>
+    <% end %>
+  </div>
+</div>

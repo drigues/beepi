@@ -1,0 +1,17 @@
+<h1>Sign Up</h1>
+<%= form_with(model: @user, url: signup_path) do |f| %>
+  <p>
+    <%= f.label :directory %><br>
+    <%= f.text_field :directory, value: @user.directory, required: true %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, required: true %>
+  </p>
+  <%= f.submit "Sign Up" %>
+<% end %>
+<%= link_to 'Login', login_path %>

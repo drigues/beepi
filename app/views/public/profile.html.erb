@@ -1,0 +1,26 @@
+<% if @user.present? %>
+  <% if @user.name.present? %>
+    <div class="profile-name"><%= @user.name %></div>
+  <% else %>
+    <div class="profile-name">Unnamed User</div>
+  <% end %>
+
+  <% if @user.bio.present? %>
+    <div class="profile-bio"><%= simple_format(@user.bio) %></div>
+  <% end %>
+
+  <div class="profile-directory">
+    <strong>Directory:</strong> <%= @user.directory %>
+  </div>
+<% else %>
+  <div class="profile-404-container">
+    <h1>Ops! This directory "<%= request.original_fullpath %>" is free to register!</h1>
+    <div class="claim-form">
+      <%= form_with url: signup_path, method: :get, local: true do |f| %>
+        <%= label_tag :directory, "Directory" %>
+        <%= text_field_tag :directory, params[:directory] || params[:directory] || request.path.delete_prefix('/'), required: true %>
+        <%= submit_tag "Claim", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
