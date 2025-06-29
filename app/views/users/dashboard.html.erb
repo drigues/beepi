@@ -1,5 +1,5 @@
 <h1>Dashboard</h1>
-<p><strong>Directory:</strong> <%= @user.directory %></p>
+<p><strong>Directory:</strong> <%= link_to @user.directory, @user.directory, target: "_blank" %></p>
 <p><strong>Email:</strong> <%= @user.email %></p>
 <p><strong>Name:</strong> <%= @user.name || "(not set yet)" %></p>
 <p><strong>Bio:</strong> <%= @user.bio || "(not set yet)" %></p>
