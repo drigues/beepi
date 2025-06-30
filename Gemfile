@@ -20,7 +20,7 @@ gem "jbuilder"
 gem "pg", "~> 1.1"
 
 # Hotwire
-gem "tailwindcss-rails", "~> 3.3.1"
+gem "tailwindcss-rails", "~> 4.2.3"
 
 # Authentication
 gem "devise"
