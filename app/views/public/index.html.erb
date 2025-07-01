@@ -9,10 +9,13 @@
 
   <!-- Claim Form -->
   <div class="flex flex-col sm:flex-row justify-center items-center gap-4 h-24">
-    <input type="text" placeholder="beepi.cc/yourname" class="px-6 py-3 w-64 sm:w-80 text-black rounded-full border border-gray-300 shadow" />
+    
     <%= form_with url: signup_path, method: :get, local: true do %>
+      beepi.cc/
+      <%= text_field_tag :directory, params[:directory], placeholder: "you", class: "px-6 py-3 w-64 sm:w-60 text-black rounded-full border border-gray-300 shadow", required: true %>
       <%= submit_tag "Claim Now", class: "cursor-pointer bg-white text-black border border-black hover:bg-black hover:text-white px-6 py-3 rounded-full transition" %>
     <% end %>
+
   </div>
 </section>
 
