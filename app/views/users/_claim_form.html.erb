@@ -1,6 +1,0 @@
-<h2>Claim a new directory</h2>
-<%= form_with url: directories_path, method: :post, local: true do |f| %>
-  <%= label_tag :directory, "Directory" %>
-  <%= text_field_tag :directory, nil, required: true %>
-  <%= submit_tag "Claim", class: "btn btn-primary" %>
-<% end %>

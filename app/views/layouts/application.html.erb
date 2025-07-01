@@ -17,7 +17,7 @@
         <a href="<%= root_path %>" class="flex items-center space-x-2 text-xl font-bold">
           <%= inline_svg("beepicc.svg", class: "w-2xs h-10") %>
         </a>
-        <div class="space-x-4 text-sm">
+        <div class="flex justify-center items-center space-x-4">
           <% if logged_in? %>
             <%= link_to "Dashboard", dashboard_path, class: "bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition" %>
             <%= button_to "Logout", logout_path, method: :delete, class: "border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition" %>
