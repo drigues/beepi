@@ -1,17 +1,29 @@
-<h1>Sign Up</h1>
-<%= form_with(model: @user, url: signup_path) do |f| %>
-  <p>
-    <%= f.label :directory %><br>
-    <%= f.text_field :directory, value: @user.directory, required: true %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password, required: true %>
-  </p>
-  <%= f.submit "Sign Up" %>
-<% end %>
-<%= link_to 'Login', login_path %>
+<section class="bg-pink-200 min-h-screen flex items-center justify-center py-20 px-6">
+  <div class="bg-white shadow-lg rounded-xl p-10 w-full max-w-md">
+    <h1 class="text-3xl font-bold text-black mb-6 text-center">Create Your Account</h1>
+
+    <%= form_with(model: @user, url: signup_path, local: true) do |f| %>
+      <div class="mb-4">
+        <%= f.label :directory, "beepi.cc/", class: "block mb-1 text-gray-800" %>
+        <%= f.text_field :directory, value: @user.directory, required: true, class: "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :email, "Email", class: "block mb-1 text-gray-800" %>
+        <%= f.email_field :email, class: "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label :password, "Password", class: "block mb-1 text-gray-800" %>
+        <%= f.password_field :password, required: true, class: "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" %>
+      </div>
+
+      <%= f.submit "Sign Up", class: "w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition" %>
+    <% end %>
+
+    <div class="text-center mt-6">
+      <p class="text-sm text-gray-700">Already have an account?</p>
+      <%= link_to 'Login', login_path, class: "text-pink-600 font-medium hover:underline" %>
+    </div>
+  </div>
+</section>

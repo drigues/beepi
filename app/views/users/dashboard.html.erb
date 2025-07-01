@@ -1,6 +1,21 @@
-<h1>Dashboard</h1>
-<p><strong>Directory:</strong> <%= link_to @user.directory, @user.directory, target: "_blank" %></p>
-<p><strong>Email:</strong> <%= @user.email %></p>
-<p><strong>Name:</strong> <%= @user.name || "(not set yet)" %></p>
-<p><strong>Bio:</strong> <%= @user.bio || "(not set yet)" %></p>
-<%= link_to "Edit Profile", profile_edit_path %>
+<section class="bg-pink-100 min-h-screen py-20 px-6">
+  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-10">
+    <h1 class="text-3xl font-bold text-black mb-8 text-center">Your Dashboard</h1>
+
+    <div class="space-y-6 text-gray-800 text-lg">
+      <p><strong>Directory:</strong>
+        <%= link_to @user.directory, @user.directory, target: "_blank", class: "text-pink-600 hover:underline" %>
+      </p>
+
+      <p><strong>Email:</strong> <%= @user.email %></p>
+
+      <p><strong>Name:</strong> <%= @user.name.presence || content_tag(:span, "(not set yet)", class: "italic text-gray-500") %></p>
+
+      <p><strong>Bio:</strong> <%= @user.bio.presence || content_tag(:span, "(not set yet)", class: "italic text-gray-500") %></p>
+    </div>
+
+    <div class="mt-10 text-center">
+      <%= link_to "Edit Profile", profile_edit_path, class: "inline-block bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition" %>
+    </div>
+  </div>
+</section>
