@@ -25,7 +25,13 @@
       <div class="space-y-4 text-left px-4">
         <h2 class="text-3xl font-bold text-black">All your tasks organized</h2>
         <p class="text-gray-800">Effortlessly manage tasks, collaborate with teams, and meet deadlines with precision and clarity.</p>
-        <%= link_to "Get Start Free", signup_path, class: "bg-black text-white px-6 py-3 rounded-full inline-block hover:bg-gray-800 transition" %>
+         <% if logged_in? %>
+            <%= link_to "Go to Dashboard", dashboard_path, class: "bg-black text-white px-6 py-3 rounded-full inline-block hover:bg-gray-800 transition" %>
+          <% else %>
+           <%= link_to "Get Start Free", signup_path, class: "bg-black text-white px-6 py-3 rounded-full inline-block hover:bg-gray-800 transition" %>
+          <% end %>
+
+        
       </div>
       <div>
         <%= image_tag "image1.png", class: "w-full rounded-xl shadow-lg" %>
